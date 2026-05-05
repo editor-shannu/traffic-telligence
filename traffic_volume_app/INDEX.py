@@ -48,7 +48,7 @@ x = scaler.fit_transform(x)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 
 # Train model
-model = ensemble.RandomForestRegressor()
+model = ensemble.RandomForestRegressor(n_estimators=30, max_depth=12, min_samples_leaf=4)
 model.fit(x_train, y_train)
 
 # Save model and scaler
